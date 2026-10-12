@@ -1,0 +1,10 @@
+{
+  "name": "marriage-invitation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Wedding invitation site - Abdulrahman & Manal, 07 Nov 2026",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}
