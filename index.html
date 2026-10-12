@@ -216,7 +216,7 @@
 
         <div class="hero-darja mt-6">
           <p class="font-display text-lg md:text-2xl text-bone/75 leading-[1.9]">«وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً»</p>
-          <p class="mt-4 text-bone/60 text-sm md:text-base leading-relaxed">يسعدنا ويشرفنا نحن عائلة بن عيسى لدعوتكم أجمل اللحظات ومشاركة فرحتنا الكبرى</p>
+          <p id="heroFamily" class="mt-4 text-bone/60 text-sm md:text-base leading-relaxed">يسعدنا ويشرفنا نحن عائلة بن عيسى لدعوتكم أجمل اللحظات ومشاركة فرحتنا الكبرى</p>
         </div>
 
         <div class="hero-date inline-flex items-center gap-3 md:gap-4 mt-9 text-bone/85 text-base md:text-xl font-kufi">
@@ -311,7 +311,7 @@
             <circle cx="16.5" cy="16.5" r="2" fill="currentColor" stroke="none"/>
           </svg>
 
-          <p class="relative font-display text-xl md:text-3xl leading-[2.1] text-bone/95">
+          <p id="inviteFamily" class="relative font-display text-xl md:text-3xl leading-[2.1] text-bone/95">
             يسعدنا ويفتخرنا نحن عائلة بن عيسى لدعوتكم لأجمل اللحظات ومشاركة فرحتنا الكبيرة
           </p>
 
@@ -456,6 +456,14 @@
       var reduce = RM || STATIC;
 
       var ADDRESS = 'Salle des fetes "Boualbani", Ouled Slama - Ouled Selama';
+
+      /* prod domain (abderahmanemarriage.vercel.app) shows both families */
+      if (location.hostname === 'abderahmanemarriage.vercel.app') {
+        var hf = document.getElementById('heroFamily');
+        var invF = document.getElementById('inviteFamily');
+        if (hf) hf.textContent = 'يسعدنا ويشرفنا نحن عائلة بن عيسى وعائلة حميدوش لدعوتكم أجمل اللحظات ومشاركة فرحتنا الكبرى';
+        if (invF) invF.textContent = 'يسعدنا ويفتخرنا نحن عائلة بن عيسى وعائلة حميدوش لدعوتكم لأجمل اللحظات ومشاركة فرحتنا الكبيرة';
+      }
 
       /* ---------- cover ---------- */
       var cover = document.getElementById('cover');
